@@ -1,6 +1,13 @@
+let url = window.location.href; //Obtiene el URL de la app en el navegador.
+let swLocation = '/twittor/sw.js'; //Establece la ruta del SW cuendo esté en peoducción.
 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    //En tiempo de desarrollo la ruta será la raíz.
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
+    
+    navigator.serviceWorker.register(swLocation); //La ruta será local o de un hosting, dependiendo lo que traiga la URL leída del navegador.
 }
 
 
