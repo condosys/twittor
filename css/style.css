@@ -11,6 +11,13 @@
     font-size: 16px;
     background-color: #dde1e2; 
     width: 100%;
+
+    /*Para que en Android no haga el Pull-To-Refresh*/
+    overscroll-behavior-y: contain;  
+    /*Configuraciones para iOS*/
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 /* Personalizados */
